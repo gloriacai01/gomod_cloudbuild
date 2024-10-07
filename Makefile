@@ -8,7 +8,6 @@ TOOL_BIN = bin/gotools/$(shell uname -s)-$(shell uname -m)
 UNAME_S ?= $(shell uname -s)
 GOPATH = $(HOME)/go/bin
 export PATH := ${GOPATH}:$(PATH) 
-SHELL := /usr/bin/env bash
 
 ifeq ($(TARGET_OS),linux)
 	CGO_ENABLED = 1
@@ -34,6 +33,7 @@ clean:
 format:
 	gofmt -w -s .
 	go get golang.org/x/tools/cmd/goimports@latest
+	which goimports
 	find . -name '*.go' -exec goimports -w {} +
 
 update-rdk:
