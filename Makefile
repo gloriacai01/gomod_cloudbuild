@@ -13,7 +13,7 @@ module.tar.gz: build
 	rm -f $(BIN_OUTPUT_PATH)/module.tar.gz
 	tar czf $(BIN_OUTPUT_PATH)/module.tar.gz $(BIN_OUTPUT_PATH)/gomod_cloudbuild
 
-setup: clean format update-rdk
+setup: format update-rdk
 
 clean:
 	rm -rf $(BIN_OUTPUT_PATH)/gomod_cloudbuild $(BIN_OUTPUT_PATH)/module.tar.gz gomod_cloudbuild
