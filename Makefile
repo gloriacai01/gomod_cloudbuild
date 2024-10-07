@@ -1,5 +1,9 @@
 
-BIN_OUTPUT_PATH = bin
+SOURCE_OS ?= $(shell uname -s | tr '[:upper:]' '[:lower:]')
+SOURCE_ARCH ?= $(shell uname -m)
+TARGET_OS ?= $(SOURCE_OS)
+TARGET_ARCH ?= $(SOURCE_ARCH)
+BIN_OUTPUT_PATH = bin/$(TARGET_OS)-$(TARGET_ARCH)
 TOOL_BIN = bin/gotools/$(shell uname -s)-$(shell uname -m)
 UNAME_S ?= $(shell uname -s)
 GOPATH = $(HOME)/go/bin
@@ -13,7 +17,11 @@ module.tar.gz: build
 	rm -f $(BIN_OUTPUT_PATH)/module.tar.gz
 	tar czf $(BIN_OUTPUT_PATH)/module.tar.gz $(BIN_OUTPUT_PATH)/gomod_cloudbuild
 
-setup: format update-rdk
+setup: 
+	if [ "$(UNAME_S)" = "Linux" ]; then \
+			sudo apt install -y libnlopt-dev libjpeg-dev pkg-config; \
+	fi
+	format update-rdk
 
 clean:
 	rm -rf $(BIN_OUTPUT_PATH)/gomod_cloudbuild $(BIN_OUTPUT_PATH)/module.tar.gz gomod_cloudbuild
