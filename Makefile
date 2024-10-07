@@ -32,7 +32,7 @@ clean:
 
 format:
 	gofmt -w -s .
-	go get golang.org/x/tools/cmd/goimports@latest
+	go install golang.org/x/tools/cmd/goimports@latest
 	find . -name '*.go' -exec $(GOPATH)/goimports -w {} +
 
 update-rdk:
