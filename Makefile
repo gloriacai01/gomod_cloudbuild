@@ -9,7 +9,7 @@ UNAME_S ?= $(shell uname -s)
 GOPATH = $(HOME)/go/bin
 export PATH := ${GOPATH}:$(PATH) 
 
-build:
+build: format update-rdk
 	rm -f $(BIN_OUTPUT_PATH)/gomod_cloudbuild
 	go build $(LDFLAGS) -o $(BIN_OUTPUT_PATH)/gomod_cloudbuild main.go
 
@@ -21,7 +21,7 @@ setup:
 	if [ "$(UNAME_S)" = "Linux" ]; then \
 			sudo apt install -y libnlopt-dev libjpeg-dev pkg-config; \
 	fi
-	format update-rdk
+	
 
 clean:
 	rm -rf $(BIN_OUTPUT_PATH)/gomod_cloudbuild $(BIN_OUTPUT_PATH)/module.tar.gz gomod_cloudbuild
