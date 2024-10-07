@@ -2,6 +2,8 @@ module gomod_cloudbuild
 
 go 1.23
 
+toolchain go1.23.2
+
 require (
 	go.viam.com/api v0.1.340
 	go.viam.com/rdk v0.44.0
