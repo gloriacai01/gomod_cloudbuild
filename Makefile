@@ -4,7 +4,6 @@ TOOL_BIN = bin/gotools/$(shell uname -s)-$(shell uname -m)
 UNAME_S ?= $(shell uname -s)
 GOPATH = $(HOME)/go/bin
 export PATH := ${GOPATH}:$(PATH) 
-SHELL := /bin/sh 
 
 build:
 	rm -f $(BIN_OUTPUT_PATH)/gomod_cloudbuild
