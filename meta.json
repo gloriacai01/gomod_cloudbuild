@@ -1,0 +1,23 @@
+{
+  "$schema": "https://dl.viam.dev/module.schema.json",
+  "module_id": "3531d2cd-ea2d-49e2-b526-975e21943ff6:gomod_cloudbuild",
+  "visibility": "private",
+  "url": "https://github.com/gloriacai01/gomod_cloudbuild",
+  "description": "Modular arm component: mymodel",
+  "models": [
+    {
+      "api": "rdk:component:arm",
+      "model": "3531d2cd-ea2d-49e2-b526-975e21943ff6:gomod_cloudbuild:mymodel"
+    }
+  ],
+  "entrypoint": "bin/gomod_cloudbuild",
+  "build": {
+    "build": "make module.tar.gz",
+    "setup": "make setup",
+    "path": "bin/module.tar.gz",
+    "arch": [
+      "linux/amd64",
+      "linux/arm64"
+    ]
+  }
+}

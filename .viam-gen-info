@@ -1,0 +1,12 @@
+{
+  "module_name": "gomod_cloudbuild",
+  "namespace": "3531d2cd-ea2d-49e2-b526-975e21943ff6",
+  "language": "go",
+  "resource_type": "component",
+  "resource_subtype": "arm",
+  "model_name": "mymodel",
+  "enable_cloud_build": true,
+  "initialize_git": false,
+  "generator_version": "0.1.0",
+  "generated_on": "2024-10-07T18:45:14.939961Z"
+}
