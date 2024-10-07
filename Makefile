@@ -8,6 +8,7 @@ TOOL_BIN = bin/gotools/$(shell uname -s)-$(shell uname -m)
 UNAME_S ?= $(shell uname -s)
 GOPATH = $(HOME)/go/bin
 export PATH := ${GOPATH}:$(PATH) 
+SHELL := /usr/bin/env bash
 
 ifeq ($(TARGET_OS),linux)
 	CGO_ENABLED = 1
