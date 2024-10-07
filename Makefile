@@ -33,9 +33,7 @@ clean:
 format:
 	gofmt -w -s .
 	go get golang.org/x/tools/cmd/goimports@latest
-	echo $(PATH)
-	which goimports
-	find . -name '*.go' -exec goimports -w {} +
+	find . -name '*.go' -exec $(GOPATH)/goimports -w {} +
 
 update-rdk:
 	go get go.viam.com/rdk@latest
