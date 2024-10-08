@@ -16,8 +16,8 @@ module.tar.gz: format update-rdk build
 
 setup: 
 	if [ "$(UNAME_S)" = "Linux" ]; then \
-		sudo apt-get update \
-		sudo apt-get install -y coreutils tar libnlopt-dev libjpeg-dev pkg-config; \
+		sudo apt-get update; \
+		sudo apt-get install -y apt-utils coreutils tar libnlopt-dev libjpeg-dev pkg-config; \
 	fi
 
 clean:
