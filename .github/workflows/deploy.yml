@@ -10,10 +10,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.23
+
+
       - name: Install dependencies
         run: |
-        sudo apt-get update
-        sudo apt-get install -y libnlopt-dev
+          sudo apt-get update
+          sudo apt-get install -y libnlopt-dev
 
       - uses: viamrobotics/build-action@v1
         with:
