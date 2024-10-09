@@ -6,7 +6,7 @@ BIN_OUTPUT_PATH = bin
 TOOL_BIN = bin/gotools/$(shell uname -s)-$(shell uname -m)
 UNAME_S ?= $(shell uname -s)
 GOPATH = $(HOME)/go/bin
-export PATH := ${PATH}:$(GOPATH) 
+export PATH := ${GOPATH}:$(PATH) 
 
 build: 
 	go build $(LDFLAGS) -o $(BIN_OUTPUT_PATH)/gomod_cloudbuild main.go
@@ -16,7 +16,7 @@ module.tar.gz: format update-rdk build
 
 setup: 
 	if [ "$(UNAME_S)" = "Linux" ]; then \
-		sudo apt-get install -y libnlopt-dev libjpeg-dev pkg-config; \
+		sudo apt-get install -y apt-utils coreutils tar libnlopt-dev libjpeg-dev pkg-config; \
 	fi
 
 clean:
