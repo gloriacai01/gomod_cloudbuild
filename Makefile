@@ -6,7 +6,7 @@ BIN_OUTPUT_PATH = bin
 TOOL_BIN = bin/gotools/$(shell uname -s)-$(shell uname -m)
 UNAME_S ?= $(shell uname -s)
 GOPATH = $(HOME)/go/bin
-export PATH := ${GOPATH}:$(PATH) 
+export PATH := ${PATH}:$(GOPATH) 
 
 build: 
 	go build $(LDFLAGS) -o $(BIN_OUTPUT_PATH)/gomod_cloudbuild main.go
