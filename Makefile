@@ -1,7 +1,3 @@
-SOURCE_OS ?= $(shell uname -s | tr '[:upper:]' '[:lower:]')
-SOURCE_ARCH ?= $(shell uname -m)
-TARGET_OS ?= $(SOURCE_OS)
-TARGET_ARCH ?= $(SOURCE_ARCH)
 BIN_OUTPUT_PATH = bin
 TOOL_BIN = bin/gotools/$(shell uname -s)-$(shell uname -m)
 UNAME_S ?= $(shell uname -s)
